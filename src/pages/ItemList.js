@@ -1,14 +1,25 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { Table } from "react-bootstrap";
 import ItemRow from "./ItemRow";
+import { LoggedInContext } from "../App";
+import { UserInContext } from "../App";
 
 function ItemList() {
   const [items, setItems] = useState([]);
+  const [isLoggedIn, setIsLoggedIn] = React.useContext(LoggedInContext);
+
+  const [userInfo, setUserInfo] = React.useContext(UserInContext);
+
+  // alert(userInfo);
+
+  const [user, setUser] = useState("");
+
+  const usernameRef = useRef();
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/items/")
+      .get("http://localhost:3001/items/" + userInfo)
       .then(({ data }) => {
         setItems(data);
       })
@@ -25,6 +36,7 @@ function ItemList() {
 
   return (
     <div className="table-wrapper">
+      {isLoggedIn ? "Welcome Back : " + userInfo : ""}
       <Table striped bordered hover>
         <thead>
           <tr>
@@ -34,6 +46,7 @@ function ItemList() {
             <th>Address</th>
             <th>Description</th>
             <th>Status</th>
+            <th>Winner</th>
             <th>Action</th>
           </tr>
         </thead>
