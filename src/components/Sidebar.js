@@ -17,11 +17,11 @@ const Sidebar = ({ children }) => {
     //   name: "Dashboard",
     //   icon: <FaTh />,
     // },
-    {
-      path: "/about",
-      name: "About",
-      icon: <FaUserAlt />,
-    },
+    // {
+    //   path: "/about",
+    //   name: "About",
+    //   icon: <FaUserAlt />,
+    // },
     {
       path: "/post",
       name: "Post",

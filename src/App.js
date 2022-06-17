@@ -8,6 +8,7 @@ import About from "./pages/About";
 import Post from "./pages/Post";
 import ItemList from "./pages/ItemList";
 import SidebarLayout from "./layouts/SidebarLayout";
+import MainLayout from "./layouts/MainLayout";
 
 export const LoggedInContext = React.createContext({
   isLoggedIn: false,
@@ -38,13 +39,15 @@ function App() {
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<Header />} />
-              <Route path="LoginForm" element={<LoginForm />} />
-              <Route path="RegisterForm" element={<RegisterForm />} />
-              <Route path="*" element={<Navigate to="/" />} />
-              <Route element={<SidebarLayout />}>
+              <Route element={<MainLayout />}>
+                <Route path="LoginForm" element={<LoginForm />} />
+                <Route path="RegisterForm" element={<RegisterForm />} />
+                <Route path="*" element={<Navigate to="/" />} />
                 <Route path="/about" element={<About />} />
-                <Route path="/post" element={<Post />} />
-                <Route path="/itemList" element={<ItemList />} />
+                <Route element={<SidebarLayout />}>
+                  <Route path="/post" element={<Post />} />
+                  <Route path="/itemList" element={<ItemList />} />
+                </Route>
               </Route>
             </Routes>
           </BrowserRouter>

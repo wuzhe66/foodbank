@@ -3,8 +3,16 @@ import { Button } from "react-bootstrap";
 import axios from "axios";
 
 const ItemRow = (props) => {
-  const { _id, itemname, username, address, expiredate, description, status } =
-    props.obj;
+  const {
+    _id,
+    itemname,
+    username,
+    address,
+    expiredate,
+    description,
+    status,
+    winner,
+  } = props.obj;
 
   const deleteItem = () => {
     axios
@@ -26,6 +34,7 @@ const ItemRow = (props) => {
       <td>{address}</td>
       <td>{description}</td>
       <td>{status}</td>
+      <td>{winner}</td>
       <td>
         <Button onClick={deleteItem} size="sm" variant="danger">
           Delete

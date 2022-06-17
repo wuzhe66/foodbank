@@ -9,6 +9,7 @@ function Post() {
   const addressRef = useRef();
   const descriptionRef = useRef();
   const statusRef = useRef();
+  const winnerRef = useRef();
   const url = process.env.REACT_APP_SERVER_URL || "http://localhost:3001";
 
   const handleSubmit = (event) => {
@@ -24,6 +25,7 @@ function Post() {
           address: addressRef.current.value,
           description: descriptionRef.current.value,
           status: statusRef.current.value,
+          winner: winnerRef.current.value,
         }),
         headers: {
           "Content-type": "application/json; charset=UTF-8",
@@ -79,6 +81,10 @@ function Post() {
             <option>active</option>
             <option>inactive</option>
           </Form.Select>
+        </Form.Group>
+        <Form.Group className="col-sm-4">
+          <Form.Label>Winner</Form.Label>
+          <Form.Control id="winner" type="text" ref={winnerRef} disabled />
         </Form.Group>
         <Button variant="danger" type="submit">
           post
