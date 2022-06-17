@@ -1,23 +1,54 @@
-import logo from './logo.svg';
-import './App.css';
+
+import React from 'react';
+import { Route, Routes, Navigate } from "react-router-dom";
+import LoginForm from './pages/LoginForm';
+import Header from './components/Header'
+import RegisterForm from './pages/RegisterForm';
+
+
+export const LoggedInContext = React.createContext({
+  isLoggedIn: false,
+  setIsLoggedIn: () => { },
+
+
+});
+
+//new
+export const UserInContext = React.createContext({
+  userInfo: '',
+  setUserInfo: () => { },
+
+});
+
 
 function App() {
+
+  const [isLoggedIn, setIsLoggedIn] = React.useState(false);
+
+  const loggedInValueToProvide = [isLoggedIn, setIsLoggedIn];
+
+  //new
+
+  const [userInfo, setUserInfo] = React.useState('');
+
+  const userValueToProvide = [userInfo, setUserInfo];
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div >
+      <LoggedInContext.Provider value={loggedInValueToProvide}>
+        <UserInContext.Provider value={userValueToProvide}>
+
+          <Routes>
+            <Route path="/" element={<Header />} />
+            <Route path="LoginForm" element={<LoginForm />} />
+            <Route path="RegisterForm" element={<RegisterForm />} />
+
+
+            <Route path="*" element={<Navigate to="/" />} />
+          </Routes>
+        </UserInContext.Provider>
+      </LoggedInContext.Provider>
     </div>
   );
 }
