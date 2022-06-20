@@ -4,14 +4,12 @@ import { UserInContext } from "../App";
 
 import { NavLink } from "react-router-dom";
 import axios from 'axios';
-import Header from '../components/Header';
 
 
 
 const LoginForm = () => {
 
     const [isLoggedIn, setIsLoggedIn] = React.useContext(LoggedInContext);
-
     const [userInfo, setUserInfo] = React.useContext(UserInContext);
 
 
@@ -61,10 +59,8 @@ const LoginForm = () => {
             // const accessToken = response.data.accessToken;
             // const roles = response.data.roles;
             // setIsLoggedIn({ user, pwd, roles, accessToken })
-            // setUser('');
-            // setPwd('')
-            // setSuccess(true);
-
+            setUser('');
+            setPwd('')
         } catch (err) {
             console.log(err)
             errRef.current.focus();
@@ -87,7 +83,7 @@ const LoginForm = () => {
 
                     <section>
                         <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
-                        <h1>Sign In</h1>
+                        <h1>Log In</h1>
                         <form onSubmit={handleLogin}>
                             <label htmlFor="username">Username:</label>
                             <input
@@ -113,7 +109,7 @@ const LoginForm = () => {
                         <p>
                             Need a Account? <br />
                             <span className="line">
-                                <NavLink to="/RegisterForm">Sign In</NavLink>
+                                <NavLink to="/sign-up">Sign Up</NavLink>
                             </span>
                         </p>
                     </section>

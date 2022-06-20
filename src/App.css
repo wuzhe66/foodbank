@@ -1,38 +1,62 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'PT Sans', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html {
+  font-family: 'Nunito', sans-serif;
+  font-size: 22px;
+  color: rgb(69, 64, 64);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #0ff047;
-  min-height: 100vh;
+ /* .home,
+.kids {
   display: flex;
-  flex-direction: column;
+  height: 85vh;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: 3rem;
 }
 
-.App-link {
-  color: #61dafb;
+.home {
+  background-image: url('/public/images/home/img-1.png');
+  background-position: center;
+  background-size:cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 60px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.kids {
+  background-image: url('/public/images/home/img-1.png');
+  background-position: center;
+  background-size:contain;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
+}  */
+
+/* .contact-us {
+  background-image: url('./images/img-4.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
 }
+
+.sign-up {
+  background-image: url('./images/img-7.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
+} */
+
+
+

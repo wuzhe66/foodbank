@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
+import {faFaceGrinBeam, faFaceDizzy, faComment } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from 'axios';
 import "./RegisterForm.css";
@@ -20,6 +20,7 @@ const RegisterForm = () => {
 
   const userRef = useRef();
   const errRef = useRef();
+
 
   const [user, setUser] = useState('');
   const [validName, setValidName] = useState(false);
@@ -71,17 +72,6 @@ const RegisterForm = () => {
     // setSuccess(true);
 
     try {
-      // const response = await axios.post(
-      //   "http://localhost:3001/users/register",
-      //   JSON.stringify({ username: user, password: pwd }),
-      //   {
-      //     headers: { 'Content-Type': 'application/json' },
-      //     // withCredentials: true
-      //   }
-      // );
-      // response.data.success ? setIsLoggedIn(true) : setIsLoggedIn(false);
-      // console.log(response.data);
-      // setErrMsg(response.data.msg);
 
       axios.post(
         "http://localhost:3001/users/register",
@@ -126,7 +116,6 @@ const RegisterForm = () => {
 
 
   return (
-    // <div className='form-content-right'>
     <>
       {isLoggedIn ? (
         <section>
@@ -153,8 +142,10 @@ const RegisterForm = () => {
               {/* <div className="form-inputs"> */}
               <label htmlFor="username">
                 Username :
-                <FontAwesomeIcon icon={faCheck} className={validName ? "valid" : "hide"} />
-                <FontAwesomeIcon icon={faTimes} className={validName || !user ? "hide" : "invalid"} />
+                {/* <FontAwesomeIcon icon={faCheck} className={validName ? "valid" : "hide"} /> */}
+                <FontAwesomeIcon icon={faFaceGrinBeam} className={validName ? "valid" : "hide"} />
+
+                <FontAwesomeIcon icon={faFaceDizzy} className={validName || !user ? "hide" : "invalid"} />
               </label>
               <input
                 type="text"
@@ -172,15 +163,15 @@ const RegisterForm = () => {
                 onBlur={() => setUserFocus(false)}
               />
               <p id="uidnote" className={userFocus && user && !validName ? "instructions" : "offscreen"}>
-                <FontAwesomeIcon icon={faInfoCircle} />
+                <FontAwesomeIcon icon={faComment} />
                 Enter a combination of 2-8 letters and numbers.<br />
 
               </p>
 
               <label htmlFor="password">
                 Password:
-                <FontAwesomeIcon icon={faCheck} className={validPwd ? "valid" : "hide"} />
-                <FontAwesomeIcon icon={faTimes} className={validPwd || !pwd ? "hide" : "invalid"} />
+                <FontAwesomeIcon icon={faFaceGrinBeam} className={validPwd ? "valid" : "hide"} />
+                <FontAwesomeIcon icon={faFaceDizzy} className={validPwd || !pwd ? "hide" : "invalid"} />
               </label>
               <input
                 type="password"
@@ -194,8 +185,9 @@ const RegisterForm = () => {
                 onBlur={() => setPwdFocus(false)}
               />
               <p id="pwdnote" className={pwdFocus && !validPwd ? "instructions" : "offscreen"}>
-                <FontAwesomeIcon icon={faInfoCircle} />
-                Password must contain Uppercase Lowercase Disgits and Special Characters.  eg.,<br />
+                <FontAwesomeIcon icon={faComment} />
+                Make a good one ! <br />
+                Uppercase Lowercase numbers and specials :&ensp;
                 <span aria-label="exclamation mark">!</span>
                 <span aria-label="at symbol">@</span>
                 <span aria-label="hashtag">#</span>
@@ -207,8 +199,9 @@ const RegisterForm = () => {
 
               <label htmlFor="confirm_pwd">
                 Confirm Password:
-                <FontAwesomeIcon icon={faCheck} className={validMatch && matchPwd ? "valid" : "hide"} />
-                <FontAwesomeIcon icon={faTimes} className={validMatch || !matchPwd ? "hide" : "invalid"} />
+                <FontAwesomeIcon icon={faFaceGrinBeam} className={validMatch && matchPwd ? "valid" : "hide"} />
+
+                {/* <FontAwesomeIcon icon={faTimes} className={validMatch || !matchPwd ? "hide" : "invalid"} /> */}
               </label>
               <input
                 type="password"
@@ -222,56 +215,19 @@ const RegisterForm = () => {
                 onBlur={() => setMatchFocus(false)}
               />
               <p id="confirmnote" className={matchFocus && !validMatch ? "instructions" : "offscreen"}>
-                <FontAwesomeIcon icon={faInfoCircle} />
-                Must match the first password input field.
+                <FontAwesomeIcon icon={faComment} />
+                Make it match the good one!
               </p>
 
               <button type="submit" className="form-input-btn" disabled={!validName || !validPwd || !validMatch ? true : false}>
                 Sign Up
               </button>
-
-              {/* </div> */}
-
-              {/* <div className="form-inputs">
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            className="form-input"
-            name="password"
-            placeholder="Enter your password"
-            value={values.password}
-            onChange={handleChange}
-          />
-          {errors.password && <p>{errors.password}</p>}
-        </div>
-
-        <div className="form-inputs">
-          <label htmlFor="password2">Confirm Password</label>
-          <input
-            type="password"
-            id="password2"
-            className="form-input"
-            name="password2"
-            placeholder="Confirm your password"
-            value={values.password2}
-            onChange={handleChange}
-          />
-          {errors.password2 && <p>{errors.password2}</p>}
-        </div>
-
-        <button type="submit" className="form-input-btn">
-          Sign Up
-        </button>
-        <span className="form-input-login">
-          Already have an account? Login <a href="#">here</a>
-        </span> */}
             </form>
 
             <p>
               Already registered?<br />
               <span className="line">
-                <NavLink to="/Header">Go Hompage</NavLink>
+                <NavLink to="/login">Log In</NavLink>
               </span>
             </p>
 
