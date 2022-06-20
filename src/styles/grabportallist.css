@@ -1,0 +1,13 @@
+.react-table {
+    background-color: rgba(83, 189, 132, 0.623);
+    color: white;
+  }
+
+  .react-table1 {
+    background-color: rgba(135, 209, 89, 0.623);
+    color: white;
+  }
+
+  .table-wrapper {
+    padding: 30px 100px;
+  }

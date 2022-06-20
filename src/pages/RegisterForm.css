@@ -3,7 +3,6 @@
 section {
     
     display: block;
-    /* height: 90vh; */
 
     margin-left: auto;
     margin-right: auto ;
@@ -18,9 +17,9 @@ section {
 
     display: flex;
     flex-direction: column;
-    /* justify-content: flex-start; */
+ 
     padding: 1rem;
-    /* background-color: rgba(0,0,0,0.0); */
+  
     background-color: rgba(20, 90, 170, 0.2);
 
 }
@@ -100,3 +99,4 @@ button {
 .line {
     display: inline-block;
 }
+ 

@@ -1,26 +1,26 @@
 export const MenuDonors = [
     {
       _id: 1,
-      title: 'Donate Food',
-      path: '/givehelp',
+      title: 'Dashboard',
+      path: '/itemList',
       cName: 'dropdown-link'
     },
     {
       _id: 2,
-      title: 'Donate Funds',
-      path: '/donation',
+      title: 'Donations',
+      path: '/kids',
       cName: 'dropdown-link'
     },
     {
       _id: 3,
-      title: 'Volunteer ',
-      path: '/volunteer',
+      title: 'Volunteers ',
+      path: '/nutrition',
       cName: 'dropdown-link'
     },
     {
       _id: 4,
       title: 'Other ways to help',
-      path: '/other',
+      path: '/development',
       cName: 'dropdown-link'
     }
   ];

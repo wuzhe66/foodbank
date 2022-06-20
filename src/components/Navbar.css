@@ -12,7 +12,7 @@
   
   .navbar-logo {
     /* color: #fff; */
-    /* background-color: rgba(0,0,0,0.5); */
+    background-color: rgba(0,0,0,0.5);
     justify-self: start;
     margin-left: 20px;
     cursor: pointer;
@@ -20,7 +20,7 @@
     font-size: 1rem;
   }
   
-  /* .fa-times {
+  .fa-times {
     color: #fff;
     font-size: 1.5rem;
   }
@@ -30,7 +30,7 @@
     font-size: 1.5rem;
 
   }
-   */
+  
 
   .fa-firstdraft {
     margin-left: 0.5rem;

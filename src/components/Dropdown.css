@@ -9,9 +9,8 @@
 .dropdown-menu li{
     background: #d69226;
     cursor: pointer;
-    
-    z-index:9999;
-    position: relative
+    z-index: 9999;
+    position: relative;
 }
 
 .dropdown-menu li:hover{
@@ -31,11 +30,10 @@
     color:#fff;
     padding: 16px;
     font-size: 18px;
-
 }
 
-/* @media screen and (max-width: 960px) {
+@media screen and (max-width: 960px) {
     .fa-caret-down {
       display: none;
     }
-  } */
+  }

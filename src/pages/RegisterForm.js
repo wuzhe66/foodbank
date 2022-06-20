@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import {faFaceGrinBeam, faFaceDizzy, faComment } from "@fortawesome/free-solid-svg-icons";
+import { faCheck, faTimes, faInfoCircle, faCodeMerge, faThumbsUp, faThumbsDown,faFaceGrinBeam, faFaceDizzy, faComment } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from 'axios';
 import "./RegisterForm.css";

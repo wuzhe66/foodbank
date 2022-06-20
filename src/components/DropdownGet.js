@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { MenuGetFood } from './MenuGetFood';
+import { MenuItems } from './MenuItems';
 import './Dropdown.css';
 import { Link } from 'react-router-dom';
 
@@ -15,7 +15,7 @@ function DropdownGet() {
         onClick={handleClick}
         className={click ? 'dropdown-menu clicked' : 'dropdown-menu'}
       >
-        {MenuGetFood.map((item, index) => {
+        {MenuItems.map((item, index) => {
           return (
             <li key={index}>
               <Link

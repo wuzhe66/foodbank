@@ -1,0 +1,12 @@
+.item-container {
+    height: 70vh;
+    display: 'flex';
+    justify-content:'center';
+    align-items:'center';
+
+}
+.react-table {
+    background-color: rgba(83, 189, 132, 0.623);
+    color: white;
+    padding: 20px 50px;
+  }

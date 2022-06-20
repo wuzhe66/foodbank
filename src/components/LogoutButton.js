@@ -4,7 +4,7 @@ import { UserInContext } from "../App";
 import './SignUpButton.css';
 
 
-function LogoutButton() {
+function LogoutButton(pros) {
 
     const [isLoggedIn, setIsLoggedIn] = React.useContext(LoggedInContext);
     const [userInfo, setUserInfo] = React.useContext(UserInContext);
