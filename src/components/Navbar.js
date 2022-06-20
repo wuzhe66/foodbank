@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useContext } from "react";
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 import DropdownGet from "./DropdownGet";
@@ -13,6 +13,7 @@ import { faBars, faComment } from "@fortawesome/free-solid-svg-icons";
 
 import { LoggedInContext } from "../App";
 import { UserInContext } from "../App";
+import { ThemeContext } from "../context";
 
 function Navbar() {
   const [isLoggedIn, setIsLoggedIn] = React.useContext(LoggedInContext);
@@ -20,6 +21,9 @@ function Navbar() {
   // alert(userInfo);
   const [user, setUser] = useState("");
   const usernameRef = useRef();
+
+  const theme = useContext(ThemeContext);
+  const darkMode = theme.state.darkMode;
 
   const [click, setClick] = useState(false);
   const [dropdown, setDropdown] = useState(false);
@@ -45,7 +49,12 @@ function Navbar() {
 
   return (
     <>
-      <nav className="navbar">
+      <nav
+        className="navbar"
+        style={{
+          background: darkMode && "#595959",
+        }}
+      >
         <NavLink to="/" className="navBar-logo">
           <img
             src="/images/logo/logo_day.png"
@@ -86,7 +95,11 @@ function Navbar() {
             onMouseEnter={onMouseEnterDoner}
             onMouseLeave={onMouseLeaveDoner}
           >
-            <NavLink to="/post" className="nav-links" onClick={closeMobileMenu}>
+            <NavLink
+              to="/post"
+              className="nav-links"
+              onClick={closeMobileMenu}
+            >
               Give Help
               {/* <FontAwesomeIcon icon={faCaretDown} className='fa-caret-down' /> */}
               <i className="fas fa-caret-down" />

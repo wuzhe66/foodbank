@@ -1,14 +1,14 @@
-import React from "react";
-import FullItemList from "../components/FullItemList";
+import React from 'react';
+import FullItemList from '../components/FullItemList';
 
 const About = () => {
-  return (
-    <div>
-      {/* <Navbar /> */}
-      <FullItemList />
-      {/* <Footer /> */}
-    </div>
-  );
-};
+    return (
+        <div>
+            {/* <Navbar /> */}
+            <FullItemList />
+            {/* <Footer /> */}
+        </div>
+    )
+}
 
 export default About;

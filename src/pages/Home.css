@@ -84,7 +84,7 @@
  }
  
  .kids {
-   background-image: url('/public/images/home/img-2.png');
+  background-image: url('/public/images/home/img-2.png') !important;
    background-position: center;
    background-size:contain;
    background-repeat: no-repeat;

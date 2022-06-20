@@ -98,7 +98,7 @@ main{
   transition: all 0.5s;
 }
 .active{
-  background: lightskyblue;
+  /* background: lightskyblue; */
   color: #000;
 }
 .icon, .link_text{
