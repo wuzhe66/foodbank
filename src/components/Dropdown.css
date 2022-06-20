@@ -1,0 +1,39 @@
+.dropdown-menu{
+    width: 200px;
+    position: absolute;
+    top:80px;
+    list-style: none;
+    text-align: start;
+}
+
+.dropdown-menu li{
+    background: #d69226;
+    cursor: pointer;
+    z-index: 9999;
+    position: relative;
+}
+
+.dropdown-menu li:hover{
+    background: #d0ba76;
+}
+
+.dropdown-menu.clicked{
+    display: none;
+}
+
+.dropdown-link{
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;  
+    /* 下拉菜单字体颜色 */
+    color:#fff;
+    padding: 16px;
+    font-size: 18px;
+}
+
+@media screen and (max-width: 960px) {
+    .fa-caret-down {
+      display: none;
+    }
+  }

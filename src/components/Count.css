@@ -1,0 +1,27 @@
+.Count {
+
+    padding: 2rem;
+    margin-left: auto;
+    margin-right: auto ;
+    margin-top: 20px ;
+
+    border-radius: 2em;
+    box-shadow: 1px 2px 2px #0D3B66;
+    background-color: gainsboro;
+
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content: center;
+
+    color: #0D3B66;
+
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 63px;
+
+    width: 100%;
+    max-width: 600px;
+    min-height:100px;
+
+}

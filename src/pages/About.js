@@ -1,25 +1,24 @@
-import React, { useRef, useState } from "react";
-import { Button } from "react-bootstrap";
-import { LoggedInContext } from "../App";
-import { UserInContext } from "../App";
+import React from "react";
+import Navbar from "../components/Navbar";
+import Slider from "../components/Slider";
+import Banners from "../components/Banners";
+import CategoryMain from "../components/CategoryMain";
+import Newsletter from "../components/Newsletter";
+import Footer from "../components/Footer";
+import Introduction from "../components/Introduction";
 
-function About() {
-  const [isLoggedIn, setIsLoggedIn] = React.useContext(LoggedInContext);
-
-  const [userInfo, setUserInfo] = React.useContext(UserInContext);
-
-  // alert(userInfo);
-
-  const [user, setUser] = useState("");
-
-  const usernameRef = useRef();
+const About = () => {
   return (
     <div>
-      {isLoggedIn ? "Welcome Back : " + userInfo : ""}
-      <h1>About page</h1>
-      <Button variant="primary">about</Button>
+      {/* <Navbar /> */}
+      <Slider />
+      <Banners />
+      <CategoryMain />
+      <Introduction />
+      <Newsletter />
+      {/* <Footer /> */}
     </div>
   );
-}
+};
 
 export default About;

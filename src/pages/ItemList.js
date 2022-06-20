@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
-import { Table } from "react-bootstrap";
+// import { Table } from "react-bootstrap";
 import ItemRow from "./ItemRow";
 import { LoggedInContext } from "../App";
 import { UserInContext } from "../App";
+import "./ItemList.css";
 
 function ItemList() {
   const [items, setItems] = useState([]);
@@ -35,23 +36,27 @@ function ItemList() {
   };
 
   return (
-    <div className="table-wrapper">
-      {isLoggedIn ? "Welcome Back : " + userInfo : ""}
-      <Table striped bordered hover>
-        <thead>
-          <tr>
-            <th>Itemname</th>
-            <th>Username</th>
-            <th>Expiredate</th>
-            <th>Address</th>
-            <th>Description</th>
-            <th>Status</th>
-            <th>Winner</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>{DataTable()}</tbody>
-      </Table>
+    <div>
+      <br />
+      <br />
+      <div className="table-wrapper">
+        {isLoggedIn ? "Welcome Back : " + userInfo : ""}
+        <table striped bordered hover class="styled-table">
+          <thead>
+            <tr>
+              <th>Itemname</th>
+              <th>Username</th>
+              <th>Expiredate</th>
+              <th>Address</th>
+              <th>Description</th>
+              <th>Status</th>
+              <th>Winner</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>{DataTable()}</tbody>
+        </table>
+      </div>
     </div>
   );
 }
