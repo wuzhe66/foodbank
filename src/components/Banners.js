@@ -1,4 +1,4 @@
-import { faArrowRightArrowLeft, faBuildingNgo, faCheck, faPhoneVolume, faTruckFast, faTruckPickup } from '@fortawesome/free-solid-svg-icons';
+import {  faBuildingNgo, faCheck, faPhoneVolume, faTruckFast, faTruckPickup } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import "../styles/banners.css";

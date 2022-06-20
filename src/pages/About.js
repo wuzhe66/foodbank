@@ -14,7 +14,7 @@ const About = () => {
             <Slider />
             <Banners />
             <CategoryMain />
-            <Newsletter />
+            {/* <Newsletter /> */}
             {/* <Footer /> */}
         </div>
     )

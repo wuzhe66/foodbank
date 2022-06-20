@@ -20,8 +20,8 @@ function Navbar() {
     const [isLoggedIn, setIsLoggedIn] = React.useContext(LoggedInContext);
     const [userInfo, setUserInfo] = React.useContext(UserInContext);
     // alert(userInfo);
-    const [user, setUser] = useState('');
-    const usernameRef = useRef();
+    // const [user, setUser] = useState('');
+    // const usernameRef = useRef();
 
     const theme = useContext(ThemeContext);
     const darkMode = theme.state.darkMode;
@@ -69,8 +69,6 @@ function Navbar() {
 
                     <li className='nav-item' onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
                         <NavLink to="/getfood" className='nav-links' onClick={closeMobileMenu}>Get Food
-                            {/* <FontAwesomeIcon className='fa-caret-down' /> */}
-                            {/* <i className='fas fa-caret-down' /> */}
                         </NavLink>
                         {dropdown && <DropdownGet />}
 
@@ -78,24 +76,14 @@ function Navbar() {
 
                     <li className='nav-item' onMouseEnter={onMouseEnterDoner} onMouseLeave={onMouseLeaveDoner}>
                         <NavLink to="/post" className='nav-links' onClick={closeMobileMenu}>Give Help
-                            {/* <FontAwesomeIcon icon={faCaretDown} className='fa-caret-down' /> */}
-                            {/* <i className='fas fa-caret-down' /> */}
+
                         </NavLink>
                         {dropdownDoner && <DropdownDonor />}
                     </li>
 
-
                     <li className='nav-item'>
                         <NavLink to="/about" className='nav-links' onClick={closeMobileMenu}>About Us</NavLink>
                     </li>
-
-                    {/* ----------------------------------------------------------------------------------------------------------------------- */}
-
-                    {/* <li className='nav-item'>
-                        {isLoggedIn ? "Welcome Back : " + userInfo : (
-                            <LogoutButton className='nav-links-mobile' onClick={closeMobileMenu} />
-                        )}
-                    </li> */}
 
 
                     {isLoggedIn ? (
@@ -103,65 +91,27 @@ function Navbar() {
                             <li className='nav-item'>
                                 <FontAwesomeIcon icon="fa-regular fa-comment-smile" />
                                 <FontAwesomeIcon icon={faComment} />
-
                                 Hi,  {userInfo}
-                                {/* <NavLink to="/signout" className='nav-links-mobile' onClick={closeMobileMenu} />Log Out */}
                             </li>
 
                             <li className='nav-item'>
                                 <LogoutButton to="/signout" />
                             </li>
                         </>
-
-
                     ) : (
                         <>
                             <li className='nav-item'>
-                                {/* <NavLink to="/sign-up" className='nav-links-mobile' onClick={closeMobileMenu}>Sign Up</NavLink> */}
                                 <SignUpButton to="/sign-up" />
 
                             </li>
 
                             <li className='nav-item'>
-                                {/* <NavLink to="/login" className='nav-links-mobile' onClick={closeMobileMenu}>Log In</NavLink> */}
                                 <LoginButton to="/login" />
 
                             </li>
                         </>
-
                     )}
-
-
-
-
-
-                    {/* <li className='nav-item'>
-                        <NavLink to="/sign-up" className='nav-links-mobile' onClick={closeMobileMenu}>Sign Up</NavLink>
-                    </li> */}
-
-
-                    {/* 不判断状态写法           */}
-                    {/* <li className='nav-item'>
-                        <NavLink to="/sign-up" className='nav-links-mobile' onClick={closeMobileMenu}>Log In</NavLink>
-                    </li> */}
-
-
-                    {/* <div>
-                        {isLoggedIn ? "Welcome Back : " + userInfo : ""}
-                        {isLoggedIn ? "<LogoutButton />"
-                            : <div>
-                                <LoginButton to="/login" />
-                                <SignUpButton to="/sign-up" />
-                            </div>
-                        }
-                    </div> */}
-
-
                 </ul>
-                {/* <LogoutButton  to="/signout"/> */}
-                {/* <SignUpButton to="/sign-up" />
-                <LoginButton to="/login" /> */}
-
             </nav>
         </>
 

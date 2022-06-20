@@ -4,7 +4,6 @@ import "./Toggle.css";
 
 
 
-
 const Toggle = () => {
 
     const theme = useContext(ThemeContext);

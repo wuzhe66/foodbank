@@ -9,11 +9,11 @@ import Toggle from "./Toggle";
 
 
 function Header() {
-    const [isLoggedIn, setIsLoggedIn] = React.useContext(LoggedInContext);
-    const [userInfo, setUserInfo] = React.useContext(UserInContext);
-    // alert(userInfo);
-    const [user, setUser] = useState('');
-    const usernameRef = useRef();
+    // const [isLoggedIn, setIsLoggedIn] = React.useContext(LoggedInContext);
+    // const [userInfo, setUserInfo] = React.useContext(UserInContext);
+    // // alert(userInfo);
+    // const [user, setUser] = useState('');
+    // const usernameRef = useRef();
 
     return (
         <div>
