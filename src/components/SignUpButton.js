@@ -1,18 +1,19 @@
 import React from "react";
+import './SignUpButton.css';
 import { NavLink, useMatch, useResolvedPath } from "react-router-dom";
 
 
-function RegisterButton(props){
+function SignUpButton(props) {
     let resolved = useResolvedPath(props.to);
     let match = useMatch({ path: resolved.pathname, end: true });
 
 
-    return(
+    return (
         <NavLink to={props.to}>
-            <button >Register Button</button>
+            <button className="btn">Sign Up</button>
         </NavLink>
     );
 
 }
 
-export default RegisterButton;
+export default SignUpButton;

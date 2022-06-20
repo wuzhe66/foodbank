@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const ItemRow = (props) => {
   const {
@@ -10,7 +11,7 @@ const ItemRow = (props) => {
     address,
     expiredate,
     description,
-    status,
+    isActive,
     winner,
   } = props.obj;
 
@@ -33,9 +34,12 @@ const ItemRow = (props) => {
       <td>{expiredate}</td>
       <td>{address}</td>
       <td>{description}</td>
-      <td>{status}</td>
+      <td>{String(isActive)}</td>
       <td>{winner}</td>
       <td>
+        <Link className="edit-link" to={"/edit/" + _id}>
+          <Button size="sm">Edit</Button>
+        </Link>
         <Button onClick={deleteItem} size="sm" variant="danger">
           Delete
         </Button>
