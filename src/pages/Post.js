@@ -1,8 +1,9 @@
-import React, { useRef, useContext } from "react";
+import React, { useRef,useContext } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import { ThemeContext } from "../context";
 import "./Post.css";
+import { ThemeContext } from "../context";
+
 
 function Post() {
   const itemnameRef = useRef();
@@ -12,11 +13,11 @@ function Post() {
   const descriptionRef = useRef();
   const isActiveRef = useRef();
   const winnerRef = useRef();
+
   const url = process.env.REACT_APP_SERVER_URL || "http://localhost:3001";
 
   const theme = useContext(ThemeContext);
   const darkMode = theme.state.darkMode;
-
 
   const handleSubmit = (event) => {
     event.preventDefault(); // prevent page reload
@@ -69,7 +70,7 @@ function Post() {
 
           <Form.Group className="col-sm-4">
             <Form.Label>Username</Form.Label>
-            <Form.Contro
+            <Form.Control
               id="username"
               type="text"
               ref={usernameRef}

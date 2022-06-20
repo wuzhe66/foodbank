@@ -16,7 +16,7 @@ import Update from "./pages/Update";
 import DashboardLayout from "./layouts/DashboardLayout";
 
 // tingting
-import GrabberPortal from "./pages/GrabberPortal";
+import GrabberPortal from './pages/GrabberPortal';
 import Details from "./pages/Details";
 import GetFoodList from "./pages/GetFoodList";
 
@@ -60,18 +60,15 @@ function App() {
 
               {/* tingting */}
               <Route path="details/:id" element={<Details />} />
-              <Route path="/getfood" element={<GetFoodList />} />
-              <Route path="grabberportal" element={<GrabberPortal />} />
+              <Route path='/getfood' element={<GetFoodList />} />
+              <Route path='grabberportal' element={<GrabberPortal />} />
 
               <Route path="*" element={<Navigate to="/" />} />
             </Route>
             <Route element={<DashboardLayout />}>
               <Route element={<SidebarLayout />}>
                 <Route path="/post" element={<Post />} />
-                <Route
-                  path="/itemList"
-                  element={isLoggedIn ? <ItemList /> : <LoginForm />}
-                />
+                <Route path="/itemList" element={<ItemList />} />
                 <Route path="/edit/:id" element={<Update />} />
 
                 <Route path="*" element={<Navigate to="/" />} />

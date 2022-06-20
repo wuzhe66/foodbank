@@ -5,7 +5,7 @@ export default function Kids(){
 
     return(
         <>
-            <h1 className = 'kids'>Meals for kids</h1>
+            <h1 className ='kids'>Meals for kids</h1>
         
         </>
     )
