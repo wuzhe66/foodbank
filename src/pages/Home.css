@@ -3,7 +3,7 @@
  .help,.volunteers {
    display: flex;
    height: 85vh;
-   /* align-items: center; */
+  
    justify-content: center;
    font-size: 3rem;
  }
@@ -13,7 +13,7 @@
   background-position: center;
   background-size:cover;
   background-repeat: no-repeat;
-  /* background-color: red; */
+  
   color: #fff;
   font-size: 60px;
 }
@@ -23,7 +23,7 @@
   background-position: center;
   background-size:cover;
   background-repeat: no-repeat;
-  /* color: #fff; */
+ 
   font-size: 60px;
 } 
 
@@ -41,7 +41,7 @@
   background-position: center;
   background-size:auto;
   background-repeat: no-repeat;
-  /* color: #fff; */
+ 
   font-size: 40px;
 } 
 
@@ -71,7 +71,7 @@
   flex:1;
   display: flex;
   flex-direction:column;
-  /* align-items: center; */
+
   align-items: flex-start;;
   padding: 0 2rem;
   justify-content: center;

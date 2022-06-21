@@ -1,9 +1,8 @@
-import React, { useRef,useContext } from "react";
+import React, { useRef, useContext } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "./Post.css";
 import { ThemeContext } from "../context";
-
 
 function Post() {
   const itemnameRef = useRef();
@@ -22,29 +21,24 @@ function Post() {
   const handleSubmit = (event) => {
     event.preventDefault(); // prevent page reload
 
-    return (
-      fetch(url + "/items", {
-        method: "POST",
-        body: JSON.stringify({
-          itemname: itemnameRef.current.value,
-          username: usernameRef.current.value,
-          expiredate: expiredateRef.current.value,
-          address: addressRef.current.value,
-          description: descriptionRef.current.value,
-          isActive: isActiveRef.current.value,
-          winner: winnerRef.current.value,
-        }),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-        },
-      })
-        //   .then((data) => data.json())
-        .then((res) => {
-          // json.success ? alert("post success") : alert(json.msg);
-          if (res.status === 200) alert("Post successfully created");
-          else Promise.reject();
-        })
-    );
+    return fetch(url + "/items", {
+      method: "POST",
+      body: JSON.stringify({
+        itemname: itemnameRef.current.value,
+        username: usernameRef.current.value,
+        expiredate: expiredateRef.current.value,
+        address: addressRef.current.value,
+        description: descriptionRef.current.value,
+        isActive: isActiveRef.current.value,
+        winner: winnerRef.current.value,
+      }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    }).then((res) => {
+      if (res.status === 200) alert("Post successfully created");
+      else Promise.reject();
+    });
   };
 
   return (
@@ -52,7 +46,9 @@ function Post() {
       <br />
       <br />
       <div className="form-wrapper">
-        <Form onSubmit={handleSubmit} className="form-style-5"
+        <Form
+          onSubmit={handleSubmit}
+          className="form-style-5"
           style={{
             backgroundColor: darkMode && "#a5a5a5",
             color: darkMode && "white",

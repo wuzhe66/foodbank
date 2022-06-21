@@ -15,7 +15,6 @@ const GrabberPortalList = () => {
   const [items, setItems] = useState([]);
   const [grabbeditems, setGrabbedItems] = useState([]);
   const [wisheditems, setWishedItems] = useState([]);
-  // console.log(items.map(item => item._id));
   const navigate = useNavigate();
 
   const [userInfo, setUserInfo] = React.useContext(UserInContext);
@@ -46,7 +45,6 @@ const GrabberPortalList = () => {
     axios
       .get(`http://localhost:3001/wisheditems/${userInfo}`, userInfo)
       .then(({ data }) => {
-        // console.log(userInfo);
         setWishedItems(data);
       })
       .catch((error) => {

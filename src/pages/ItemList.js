@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
-// import { Table } from "react-bootstrap";
 import ItemRow from "./ItemRow";
 import { LoggedInContext } from "../App";
 import { UserInContext } from "../App";
