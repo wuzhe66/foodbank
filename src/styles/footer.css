@@ -1,4 +1,5 @@
 .f-container {
+    background: linear-gradient( #539141 6%, #8ab66b 22%, #539141 83%, #398235 92%);
     padding: 20px 15px;
 }
 
@@ -51,7 +52,7 @@
 
 .f-col:nth-child(2) ul li a,
 .f-col:nth-child(3) ul li a {
-    color: #001e28;
+    /* color: #001e28; */
     letter-spacing: 1.2px;
 }
 
@@ -66,6 +67,7 @@
     padding: 10px 0;
     letter-spacing: 1.2px;
 }
+
 
 @media screen and (max-width: 780px) {
     .f-row {

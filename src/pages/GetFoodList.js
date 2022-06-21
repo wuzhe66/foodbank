@@ -1,7 +1,7 @@
 import React from 'react';
 import FullItemList from '../components/FullItemList';
 
-const About = () => {
+const GetFoodList = () => {
     return (
         <div>
             {/* <Navbar /> */}
@@ -11,4 +11,4 @@ const About = () => {
     )
 }
 
-export default About;
+export default GetFoodList;

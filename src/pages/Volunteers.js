@@ -8,6 +8,7 @@ export default function Volunteers() {
             <div className='volunteers'>
                 <div className='volunteers-left'>
                     <div className='volunteers-left-word'>
+                        <br />
                         Volunteers
                     </div>
 

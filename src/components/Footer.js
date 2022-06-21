@@ -1,43 +1,52 @@
-import React from 'react';
+import React, { useContext } from "react";
 import { NavLink } from 'react-router-dom';
 import "../styles/footer.css";
+import { ThemeContext } from "../context";
+
 
 const Footer = () => {
+
+    const theme = useContext(ThemeContext);
+    const darkMode = theme.state.darkMode;
+    
     return (
-        <div className="f-container">
+        <div className="f-container"
+            style={{
+                background: darkMode && "#595959",
+            }}>
             <div className="f-row">
                 <div className="f-col">
                     <img src="/images/logo/logo_day.png" alt="" />
                     <p>With Too Good To Go earn money from leftovers! Is your restaurant's food going in the trash? Sign up and help fight food shortage for those help-needed.</p>
                 </div>
                 <div className="f-col">
-                    <h2>Quick Links</h2>
-                    <ul>
+                    <h2>GET FOOD</h2>
+                    <ul class='f-col.text'>
                         <li>
-                            <NavLink to="/">Home</NavLink>
+                            <NavLink to="/getfood">Grab food</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/grab">Grab</NavLink>
+                            <NavLink to="/kids">Meals for Kids</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/about">About</NavLink>
+                            <NavLink to="/nutrition">Nutrition Center</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/contact">Contact</NavLink>
+                            <NavLink to="/development">Goals</NavLink>
                         </li>
                     </ul>
                 </div>
                 <div className="f-col">
-                <h2>Quick Links</h2>
+                    <h2>GIVE HELP</h2>
                     <ul>
                         <li>
-                            <NavLink to="/">Motivation</NavLink>
+                            <NavLink to="/post">Start Donation</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/">Team</NavLink>
+                            <NavLink to="/volunteers">Volunteer</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/">Goal</NavLink>
+                            <NavLink to="/help">Funds</NavLink>
                         </li>
                     </ul>
                 </div>

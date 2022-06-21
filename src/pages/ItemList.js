@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
-// import { Table } from "react-bootstrap";
 import ItemRow from "./ItemRow";
 import { LoggedInContext } from "../App";
 import { UserInContext } from "../App";
@@ -12,11 +11,10 @@ function ItemList() {
 
   const [userInfo, setUserInfo] = React.useContext(UserInContext);
 
-  // alert(userInfo);
-
   const [user, setUser] = useState("");
-
   const usernameRef = useRef();
+
+
 
   useEffect(() => {
     axios
@@ -39,7 +37,7 @@ function ItemList() {
     <div>
       <br />
       <br />
-      <div className="table-wrapper">
+      <div className="table-wrapper" >
         {isLoggedIn ? "Welcome Back : " + userInfo : ""}
         <table striped bordered hover class="styled-table">
           <thead>

@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { ThemeContext } from '../context';
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Button } from "react-bootstrap";
@@ -16,6 +17,8 @@ const FullItemList = () => {
   // console.log(items.map(item => item._id));
   const navigate = useNavigate();
 
+  const theme = useContext(ThemeContext);
+  const darkMode = theme.state.darkMode;
 
   useEffect(() => {
     axios
@@ -44,9 +47,12 @@ const FullItemList = () => {
       <div className="table-wrapper">
         <ReactTable
           className="react-table"
+          style={{
+            color: darkMode && "white",
+          }}
           data={items}
           defaultPageSize={8}
-          pageSizeOptions= {[5, 8, 10, 20]}
+          pageSizeOptions={[5, 8, 10, 20]}
           filterable
           defaultFilterMethod={(filter, row) =>
             String(row[filter.id]) === filter.value

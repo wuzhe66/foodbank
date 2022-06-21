@@ -43,14 +43,9 @@ export const counts = [
         "number": "5321",
         "duration": "2"
     },
-    // {
-    //     "id": "003",
-    //     "label": "Outr ",
-    //     "number": "1000",
-    //     "duration": "2"
-    // },
+
     {
-        "id": "004",
+        "id": "003",
         "label": "Our Donors",
         "number": "3892",
         "duration": "2"
