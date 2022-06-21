@@ -7,6 +7,13 @@ import MainLayout from "./layouts/MainLayout";
 import SignOut from "./pages/SignOut";
 import Home from "./pages/Home";
 import Kids from "./pages/Kids";
+
+import Nutrition from "./pages/Nutrition";
+import Development from "./pages/Development";
+import Volunteers from "./pages/Volunteers";
+import Help from "./pages/Help";
+
+
 import "./App.css";
 import { ThemeContext } from "./context";
 import Post from "./pages/Post";
@@ -57,6 +64,12 @@ function App() {
               <Route path="sign-up" element={<RegisterForm />} />
               <Route path="signout" element={<SignOut />} />
               <Route path="kids" element={<Kids />} />
+
+              <Route path="nutrition" element={<Nutrition />} />
+              <Route path="development" element={<Development />} />
+              <Route path="volunteers" element={<Volunteers />} />
+              <Route path="help" element={<Help />} />
+
 
               {/* tingting */}
               <Route path="details/:id" element={<Details />} />

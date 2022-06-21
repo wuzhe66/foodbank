@@ -12,13 +12,11 @@ export default function Home() {
   const theme = useContext(ThemeContext);
   const darkMode = theme.state.darkMode;
 
-  const number1=600;
-
   return (
     <>
       <div className='home'
         style={{
-          // backgroundColor: darkMode ? "#595959" : "white",
+          backgroundColor: darkMode ? "#595959" : "#f2f2f2",
           color: darkMode && "black",
         }}
       >

@@ -8,19 +8,19 @@ export const MenuDonors = [
     {
       _id: 2,
       title: 'Donations',
-      path: '/kids',
+      path: '/post',
       cName: 'dropdown-link'
     },
     {
       _id: 3,
       title: 'Volunteers ',
-      path: '/nutrition',
+      path: '/volunteers',
       cName: 'dropdown-link'
     },
     {
       _id: 4,
       title: 'Other ways to help',
-      path: '/development',
+      path: '/help',
       cName: 'dropdown-link'
     }
   ];
