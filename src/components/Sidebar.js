@@ -12,16 +12,6 @@ const Sidebar = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
   const menuItem = [
-    // {
-    //   path: "/",
-    //   name: "Dashboard",
-    //   icon: <FaTh />,
-    // },
-    // {
-    //   path: "/about",
-    //   name: "About",
-    //   icon: <FaUserAlt />,
-    // },
     {
       path: "/post",
       name: "Post",
@@ -38,7 +28,7 @@ const Sidebar = ({ children }) => {
       <div style={{ width: isOpen ? "200px" : "50px" }} className="sidebar">
         <div className="top_section">
           <h1 style={{ display: isOpen ? "block" : "none" }} className="logo">
-            Logo
+            Hello
           </h1>
           <div style={{ marginLeft: isOpen ? "50px" : "0px" }} className="bars">
             <FaBars onClick={toggle} />

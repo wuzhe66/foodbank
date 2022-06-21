@@ -13,7 +13,6 @@ import Development from "./pages/Development";
 import Volunteers from "./pages/Volunteers";
 import Help from "./pages/Help";
 
-
 import "./App.css";
 import { ThemeContext } from "./context";
 import Post from "./pages/Post";
@@ -23,7 +22,7 @@ import Update from "./pages/Update";
 import DashboardLayout from "./layouts/DashboardLayout";
 
 // tingting
-import GrabberPortal from './pages/GrabberPortal';
+import GrabberPortal from "./pages/GrabberPortal";
 import Details from "./pages/Details";
 import GetFoodList from "./pages/GetFoodList";
 
@@ -70,15 +69,13 @@ function App() {
               <Route path="volunteers" element={<Volunteers />} />
               <Route path="help" element={<Help />} />
 
-
               {/* tingting */}
               <Route path="details/:id" element={<Details />} />
-              <Route path='/getfood' element={<GetFoodList />} />
-              <Route path='grabberportal' element={<GrabberPortal />} />
+              <Route path="/getfood" element={<GetFoodList />} />
+              <Route path="grabberportal" element={<GrabberPortal />} />
 
               <Route path="*" element={<Navigate to="/" />} />
-            </Route>
-            <Route element={<DashboardLayout />}>
+
               <Route element={<SidebarLayout />}>
                 <Route path="/post" element={<Post />} />
                 <Route path="/itemList" element={<ItemList />} />

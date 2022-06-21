@@ -21,7 +21,6 @@ const ItemRow = (props) => {
       .then((res) => {
         if (res.status === 200) {
           alert("Item successfully deleted");
-          window.location.reload();
         } else Promise.reject();
       })
       .catch((err) => alert("Something went wrong"));
