@@ -63,7 +63,7 @@ function Details() {
   const grabItem = async (id) => {
     console.log("grab id " + id);
     console.log("grab userinfo " + userInfo);
-    await axios.put("http://localhost:3001/items/", { id, userInfo });
+    await axios.put("http://localhost:3001/items/grab", { id, userInfo });
     await axios.post("http://localhost:3001/grabbeditems/", { id, userInfo });
 
     navigate("/grabberportal");

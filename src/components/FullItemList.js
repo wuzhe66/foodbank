@@ -98,7 +98,7 @@ const FullItemList = () => {
                     onClick={(props) => itemDetails(data.row._original._id)}
                     variant="primary"
                   >
-                    Details
+                    Grab 
                   </Button>
                 </div>
               ),

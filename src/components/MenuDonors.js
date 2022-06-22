@@ -1,16 +1,17 @@
 export const MenuDonors = [
     {
       _id: 1,
-      title: 'Dashboard',
-      path: '/itemList',
+      title: 'Donate',
+      path: '/post',
       cName: 'dropdown-link'
     },
     {
       _id: 2,
-      title: 'Donations',
-      path: '/post',
+      title: 'Dashboard',
+      path: '/itemList',
       cName: 'dropdown-link'
     },
+
     {
       _id: 3,
       title: 'Volunteers ',

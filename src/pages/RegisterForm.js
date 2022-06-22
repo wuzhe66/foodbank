@@ -96,7 +96,7 @@ const RegisterForm = () => {
   };
 
   return (
-    <div class='section-container'>
+    <div className ='section-container'>
       {isLoggedIn ? (
         <section>
           <h1>Success! Nice to meet you {userInfo}</h1>
@@ -181,7 +181,8 @@ const RegisterForm = () => {
             >
               <FontAwesomeIcon icon={faComment} />
               Make a good one ! <br />
-              Uppercase Lowercase numbers and specials :&ensp;
+              Uppercase Lowercase <br />
+              numbers and specials :&ensp;
               <span aria-label="exclamation mark">!</span>
               <span aria-label="at symbol">@</span>
               <span aria-label="hashtag">#</span>

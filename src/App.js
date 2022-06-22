@@ -28,12 +28,12 @@ import GetFoodList from "./pages/GetFoodList";
 
 export const LoggedInContext = React.createContext({
   isLoggedIn: false,
-  setIsLoggedIn: () => {},
+  setIsLoggedIn: () => { },
 });
 
 export const UserInContext = React.createContext({
   userInfo: "",
-  setUserInfo: () => {},
+  setUserInfo: () => { },
 });
 
 function App() {
@@ -70,9 +70,9 @@ function App() {
               <Route path="help" element={<Help />} />
 
               {/* tingting */}
-              <Route path="details/:id" element={<Details />} />
-              <Route path="/getfood" element={<GetFoodList />} />
-              <Route path="grabberportal" element={<GrabberPortal />} />
+              <Route path="details/:id" element={isLoggedIn ? <Details /> : <LoginForm />} />
+              <Route path='/getfood' element={<GetFoodList />} />
+              <Route path='grabberportal' element={isLoggedIn ? <GrabberPortal /> : <LoginForm />} />
 
               <Route path="*" element={<Navigate to="/" />} />
 
