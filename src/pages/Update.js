@@ -71,7 +71,6 @@ function Update(props) {
         "Content-Type": "application/json",
       },
     }).then((res) => {
-      // json.success ? alert("post success") : alert(json.msg);
       if (res.status === 200) alert("Update successfully ");
       else Promise.reject();
     });

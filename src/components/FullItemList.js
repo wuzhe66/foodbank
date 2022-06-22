@@ -1,21 +1,20 @@
 import React, { useState, useEffect, useContext } from "react";
 import { ThemeContext } from '../context';
+
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+
 import { Button } from "react-bootstrap";
-// import  Table  from "./Table";
 import ItemTableRow from "./ItemTableRow";
-// Import React Table
 import ReactTable from "react-table-6";
 import "react-table-6/react-table.css";
 import "../styles/itemlist_g.css";
 
 const FullItemList = () => {
-  // const { itemname, username, expiredate, address, description, isActive } = props.obj || {};
+  const navigate = useNavigate();
+
 
   const [items, setItems] = useState([]);
-  // console.log(items.map(item => item._id));
-  const navigate = useNavigate();
 
   const theme = useContext(ThemeContext);
   const darkMode = theme.state.darkMode;
@@ -39,7 +38,6 @@ const FullItemList = () => {
 
   const itemDetails = (_id) => {
     navigate("/details/" + _id);
-    // console.log(_id);
   };
 
   return (
@@ -90,14 +88,7 @@ const FullItemList = () => {
             },
             {
               Header: "Action",
-              // accessor: "isActive",
-              // filterable: false,
-              // Cell:  data  => (
-              // 	// console.log(data.row._original._id)
-              // 	<div>
-              // 		<Button size="sm" onClick={props=>itemDetails(data.row._original._id)} variant="primary">Details</Button>
-              // 	</div>
-              // )
+
               accessor: "isActive",
               id: "over",
               Cell: (data) => (

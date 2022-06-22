@@ -3,9 +3,15 @@ import { Button } from "react-bootstrap";
 import axios from "axios";
 
 const ItemTableRow = (props) => {
-  const { _id, itemname, username, expiredate, address, description, isActive } =
-    props.obj;
-    // console.log("isActive="+isActive);
+  const {
+    _id,
+    itemname,
+    username,
+    expiredate,
+    address,
+    description,
+    isActive,
+  } = props.obj;
 
   const wishList = () => {
     axios
@@ -32,17 +38,21 @@ const ItemTableRow = (props) => {
   };
 
   return (
-        <tr style={{display: isActive ? '' : 'none'}}>
-        <td>{itemname}</td>
-        <td>{username}</td>
-        <td>{expiredate}</td>
-        <td>{address}</td>
-        <td>{description}</td>
-        <td>
-            <Button onClick={grabItem} size="sm" variant="success">Grab</Button>
-            <Button onClick={wishList} size="sm" variant="primary">WishList</Button>
-        </td>
-        </tr>
+    <tr style={{ display: isActive ? "" : "none" }}>
+      <td>{itemname}</td>
+      <td>{username}</td>
+      <td>{expiredate}</td>
+      <td>{address}</td>
+      <td>{description}</td>
+      <td>
+        <Button onClick={grabItem} size="sm" variant="success">
+          Grab
+        </Button>
+        <Button onClick={wishList} size="sm" variant="primary">
+          WishList
+        </Button>
+      </td>
+    </tr>
   );
 };
 

@@ -1,14 +1,12 @@
-import React from 'react';
-import FullItemList from '../components/FullItemList';
+import React from "react";
+import FullItemList from "../components/FullItemList";
 
 const GetFoodList = () => {
-    return (
-        <div>
-            {/* <Navbar /> */}
-            <FullItemList />
-            {/* <Footer /> */}
-        </div>
-    )
-}
+  return (
+    <div>
+      <FullItemList />
+    </div>
+  );
+};
 
 export default GetFoodList;

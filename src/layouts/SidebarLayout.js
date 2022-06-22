@@ -1,7 +1,6 @@
 import { Outlet } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 import { Col } from "react-bootstrap";
-// import "bootstrap/dist/css/bootstrap.min.css";
 import "./SidebarLayout.css";
 
 const SidebarLayout = () => (

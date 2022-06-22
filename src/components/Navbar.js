@@ -3,14 +3,11 @@ import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 import DropdownGet from "./DropdownGet";
 import DropdownDonor from "./DropdownDonor";
-
 import SignUpButton from "./SignUpButton";
 import LoginButton from "./LoginButton";
 import LogoutButton from "./LogoutButton";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faComment } from "@fortawesome/free-solid-svg-icons";
-
 import { LoggedInContext } from "../App";
 import { UserInContext } from "../App";
 import { ThemeContext } from "../context";
@@ -18,7 +15,7 @@ import { ThemeContext } from "../context";
 function Navbar() {
   const [isLoggedIn, setIsLoggedIn] = React.useContext(LoggedInContext);
   const [userInfo, setUserInfo] = React.useContext(UserInContext);
-  // alert(userInfo);
+
   const [user, setUser] = useState("");
   const usernameRef = useRef();
 
@@ -84,7 +81,6 @@ function Navbar() {
               onClick={closeMobileMenu}
             >
               Get Food
-              {/* <FontAwesomeIcon className='fa-caret-down' /> */}
               <i className="fas fa-caret-down" />
             </NavLink>
             {dropdown && <DropdownGet />}
@@ -95,13 +91,8 @@ function Navbar() {
             onMouseEnter={onMouseEnterDoner}
             onMouseLeave={onMouseLeaveDoner}
           >
-            <NavLink
-              to="/post"
-              className="nav-links"
-              onClick={closeMobileMenu}
-            >
+            <NavLink to="/post" className="nav-links" onClick={closeMobileMenu}>
               Give Help
-              {/* <FontAwesomeIcon icon={faCaretDown} className='fa-caret-down' /> */}
               <i className="fas fa-caret-down" />
             </NavLink>
             {dropdownDoner && <DropdownDonor />}
@@ -117,21 +108,12 @@ function Navbar() {
             </NavLink>
           </li>
 
-          {/* ----------------------------------------------------------------------------------------------------------------------- */}
-
-          {/* <li className='nav-item'>
-                        {isLoggedIn ? "Welcome Back : " + userInfo : (
-                            <LogoutButton className='nav-links-mobile' onClick={closeMobileMenu} />
-                        )}
-                    </li> */}
-
           {isLoggedIn ? (
             <>
               <li className="nav-item">
                 <FontAwesomeIcon icon="fa-regular fa-comment-smile" />
                 <FontAwesomeIcon icon={faComment} />
                 Hi, {userInfo}
-                {/* <NavLink to="/signout" className='nav-links-mobile' onClick={closeMobileMenu} />Log Out */}
               </li>
 
               <li className="nav-item">
@@ -141,39 +123,15 @@ function Navbar() {
           ) : (
             <>
               <li className="nav-item">
-                {/* <NavLink to="/sign-up" className='nav-links-mobile' onClick={closeMobileMenu}>Sign Up</NavLink> */}
                 <SignUpButton to="/sign-up" />
               </li>
 
               <li className="nav-item">
-                {/* <NavLink to="/login" className='nav-links-mobile' onClick={closeMobileMenu}>Log In</NavLink> */}
                 <LoginButton to="/login" />
               </li>
             </>
           )}
-
-          {/* <li className='nav-item'>
-                        <NavLink to="/sign-up" className='nav-links-mobile' onClick={closeMobileMenu}>Sign Up</NavLink>
-                    </li> */}
-
-          {/* 不判断状态写法           */}
-          {/* <li className='nav-item'>
-                        <NavLink to="/sign-up" className='nav-links-mobile' onClick={closeMobileMenu}>Log In</NavLink>
-                    </li> */}
-
-          {/* <div>
-                        {isLoggedIn ? "Welcome Back : " + userInfo : ""}
-                        {isLoggedIn ? "<LogoutButton />"
-                            : <div>
-                                <LoginButton to="/login" />
-                                <SignUpButton to="/sign-up" />
-                            </div>
-                        }
-                    </div> */}
         </ul>
-        {/* <LogoutButton  to="/signout"/> */}
-        {/* <SignUpButton to="/sign-up" />
-                <LoginButton to="/login" /> */}
       </nav>
     </>
   );

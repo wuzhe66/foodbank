@@ -1,11 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { LoggedInContext } from '../App';
+import React, { useEffect, useRef, useState } from "react";
+import { LoggedInContext } from "../App";
 import { UserInContext } from "../App";
 
 import { NavLink } from "react-router-dom";
-import axios from 'axios';
-
-
+import axios from "axios";
 
 const LoginForm = () => {
 
@@ -39,14 +37,10 @@ const LoginForm = () => {
                 JSON.stringify({ username: user, password: pwd }),
                 {
                     headers: { 'Content-Type': 'application/json' },
-                    // withCredentials: true
                 }
             )
                 .then(
                     (response) => {
-                        // const accessToken = response.data.accessToken;
-                        // const roles = response.data.roles;
-                        // setIsLoggedIn({ user, pwd, roles, accessToken })
                         console.log(response.data);
                         response.data.success ? setIsLoggedIn(true) : setIsLoggedIn(false);
                         response.data.success ? setUserInfo(user) : setUserInfo('Visiter');
