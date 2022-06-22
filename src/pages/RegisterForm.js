@@ -9,7 +9,6 @@ import axios from "axios";
 import "./RegisterForm.css";
 import { NavLink } from "react-router-dom";
 import { UserInContext } from "../App";
-
 import { LoggedInContext } from "../App";
 
 const USER_REGEX = /^[a-zA-Z0-9-_]{2,8}$/;

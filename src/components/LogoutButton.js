@@ -4,21 +4,19 @@ import { UserInContext } from "../App";
 import './SignUpButton.css';
 
 
-function LogoutButton(pros) {
+function LogoutButton(props) {
 
     const [isLoggedIn, setIsLoggedIn] = React.useContext(LoggedInContext);
     const [userInfo, setUserInfo] = React.useContext(UserInContext);
 
 
     const handleLogOut = (e) => {
-
         e.preventDefault();
         setIsLoggedIn(false);
         setUserInfo('Visiter');
     }
-
     return (
-        <button onClick={handleLogOut} class="btn2">Log Out</button>
+        < button onClick={handleLogOut} class="btn2">Log Out</button>
     )
 }
 
