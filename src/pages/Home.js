@@ -17,7 +17,7 @@ export default function Home() {
       <div className='home'
         style={{
           backgroundColor: darkMode ? "#595959" : "#f2f2f2",
-          color: darkMode && "black",
+          color: darkMode && "white",
         }}
       >
 

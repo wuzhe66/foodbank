@@ -6,6 +6,7 @@
   padding: 0;
   font-family: 'PT Sans', sans-serif;
   text-decoration: none;
+  
 
 }
 
@@ -22,6 +23,7 @@ html {
 main{
   width: 100%;
   padding: 20px;
+
 }
 .sidebar{
   background: #000;

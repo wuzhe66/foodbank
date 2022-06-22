@@ -1,6 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { ThemeContext } from '../context';
+
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+
 import { Button } from "react-bootstrap";
 import ItemTableRow from "./ItemTableRow";
 import ReactTable from "react-table-6";
@@ -8,9 +11,13 @@ import "react-table-6/react-table.css";
 import "../styles/itemlist_g.css";
 
 const FullItemList = () => {
+  const navigate = useNavigate();
+
+
   const [items, setItems] = useState([]);
 
-  const navigate = useNavigate();
+  const theme = useContext(ThemeContext);
+  const darkMode = theme.state.darkMode;
 
   useEffect(() => {
     axios
@@ -38,6 +45,9 @@ const FullItemList = () => {
       <div className="table-wrapper">
         <ReactTable
           className="react-table"
+          style={{
+            color: darkMode && "white",
+          }}
           data={items}
           defaultPageSize={8}
           pageSizeOptions={[5, 8, 10, 20]}

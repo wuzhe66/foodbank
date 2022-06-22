@@ -102,7 +102,7 @@ const RegisterForm = () => {
   };
 
   return (
-    <>
+    <div class='section-container'>
       {isLoggedIn ? (
         <section>
           <h1>Success! Nice to meet you {userInfo}</h1>
@@ -222,27 +222,21 @@ const RegisterForm = () => {
               <FontAwesomeIcon icon={faComment} />
               Make it match the good one!
             </p>
-
-            <button
-              type="submit"
-              className="form-input-btn"
-              disabled={!validName || !validPwd || !validMatch ? true : false}
-            >
+            <button type="submit" className="form-input-btn" disabled={!validName || !validPwd || !validMatch ? true : false}>
               Sign Up
             </button>
           </form>
-
           <p>
-            Already registered?
-            <br />
+            Already registered?<br />
             <span className="line">
               <NavLink to="/login">Log In</NavLink>
             </span>
           </p>
+
         </section>
       )}
-    </>
-  );
-};
+    </div>
+  )
+}
 
 export default RegisterForm;

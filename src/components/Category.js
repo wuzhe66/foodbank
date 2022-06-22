@@ -31,23 +31,23 @@ export const category = [
   },
 ];
 export const counts = [
-  {
-    id: "001",
-    label: "Support people",
-    number: "450,000",
-    duration: "2",
-  },
-  {
-    id: "002",
-    label: "Support Schools",
-    number: "5321",
-    duration: "2",
-  },
+    {
+        "id": "001",
+        "label": "Support people",
+        "number": "450,000",
+        "duration": "2"
+    },
+    {
+        "id": "002",
+        "label": "Support Schools",
+        "number": "5321",
+        "duration": "2"
+    },
 
-  {
-    id: "004",
-    label: "Our Donors",
-    number: "3892",
-    duration: "2",
-  },
+    {
+        "id": "003",
+        "label": "Our Donors",
+        "number": "3892",
+        "duration": "2"
+    }
 ];

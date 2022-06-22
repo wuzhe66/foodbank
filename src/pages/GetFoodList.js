@@ -1,7 +1,7 @@
 import React from "react";
 import FullItemList from "../components/FullItemList";
 
-const About = () => {
+const GetFoodList = () => {
   return (
     <div>
       <FullItemList />
@@ -9,4 +9,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default GetFoodList;

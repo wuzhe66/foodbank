@@ -13,7 +13,6 @@
   background-position: center;
   background-size:cover;
   background-repeat: no-repeat;
-  
   color: #fff;
   font-size: 60px;
 }
@@ -41,8 +40,9 @@
   background-position: center;
   background-size:auto;
   background-repeat: no-repeat;
- 
-  font-size: 40px;
+  font-size: 50px;
+  background-color: #B6C1B4;
+
 } 
 
 .help {
@@ -57,10 +57,9 @@
 .volunteers {
   background-image: url('/public/images/home/img-7.png');
    background-position:center;
-   background-size:contain;
-   background-color: #B6C1B4;
+   background-size:cover;
    background-repeat: no-repeat;
-  color: #fff;
+   color: #fff;
   font-size: 60px;
   height: 100vh;
 
