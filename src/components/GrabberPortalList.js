@@ -52,12 +52,12 @@ const GrabberPortalList = () => {
       });
   }, [userInfo]);
 
-  const deleteGrabbedItem = async (id) => {
+  const deleteGrabbedItem = async (id,userInfo) => {
     await axios.delete(`http://localhost:3001/grabbeditems/${id}`, id)
       .then((res) => {
         if (res.status === 200) {
           alert("Grabbed Item successfully deleted");
-          axios.get("http://localhost:3001/grabbeditems/")
+          axios.get(`http://localhost:3001/grabbeditems/${userInfo}`,userInfo)
           .then(({ data }) => {
             // console.log(userInfo);
             setGrabbedItems(data);
@@ -126,7 +126,7 @@ const GrabberPortalList = () => {
                 <Button
                   size="sm"
                   onClick={() =>
-                    deleteGrabbedItem(data.row._original.grabbeditem_id)
+                    deleteGrabbedItem(data.row._original.grabbeditem_id,userInfo)
                   }
                   variant="danger"
                 >

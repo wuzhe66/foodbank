@@ -78,7 +78,7 @@ function App() {
 
               <Route element={<SidebarLayout />}>
                 <Route path="/post" element={<Post />} />
-                <Route path="/itemList" element={<ItemList />} />
+                <Route path="/itemList" element={ isLoggedIn ? <ItemList /> : <LoginForm/>} />
                 <Route path="/edit/:id" element={<Update />} />
 
                 <Route path="*" element={<Navigate to="/" />} />
