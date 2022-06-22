@@ -9,7 +9,7 @@ export default function Development() {
             <div className='development'>
                 <div className='development-left'>
                     <div className='development-left-word'>
-                        Development Golas
+                        Our Golas
                     </div>
 
                 </div>

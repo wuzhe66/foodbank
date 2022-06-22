@@ -1,11 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import {
-  faCheck,
-  faTimes,
-  faInfoCircle,
-  faCodeMerge,
-  faThumbsUp,
-  faThumbsDown,
   faFaceGrinBeam,
   faFaceDizzy,
   faComment,
