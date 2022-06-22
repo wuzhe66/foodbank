@@ -1,6 +1,8 @@
 .f-container {
     background: linear-gradient( #539141 6%, #8ab66b 22%, #539141 83%, #398235 92%);
     padding: 20px 15px;
+    font-size: 0.9rem;
+    height: 220px;
 }
 
 .f-row {
@@ -13,6 +15,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-size: 0.9rem;
+
 }
 
 .f-col:first-child img {
@@ -58,7 +62,7 @@
 
 .f-col:nth-child(2) ul li a:hover,
 .f-col:nth-child(3) ul li a:hover {
-    color: #ff0000;
+    color: #d69226;
 }
 
 .f-copyrow {

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Count.css';
 
+
 const Count = props => {
 
   const { label, number, duration } = props.data
