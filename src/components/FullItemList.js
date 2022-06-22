@@ -118,8 +118,8 @@ const FullItemList = () => {
                   value={filter ? filter.value : "all"}
                 >
                   <option value="all">Show All</option>
-                  <option value="true">Ungrabbed</option>
-                  <option value="false">Grabbed</option>
+                  <option value="true">Available</option>
+                  <option value="false">Unavailable</option>
                 </select>
               ),
             },
