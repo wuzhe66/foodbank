@@ -3,9 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 import { UserInContext } from "../App";
-
 import { Button } from "react-bootstrap";
-
 // Import React Table
 import ReactTable from "react-table-6";
 import "react-table-6/react-table.css";
@@ -32,7 +30,8 @@ const GrabberPortalList = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3001/grabbeditems/${userInfo}`, userInfo)
+      .get(
+        `http://localhost:3001/grabbeditems/${userInfo}`,userInfo)
       .then(({ data }) => {
         setGrabbedItems(data);
       })
@@ -43,7 +42,8 @@ const GrabberPortalList = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3001/wisheditems/${userInfo}`, userInfo)
+      .get(
+        `http://localhost:3001/wisheditems/${userInfo}`,userInfo)
       .then(({ data }) => {
         setWishedItems(data);
       })
@@ -52,9 +52,38 @@ const GrabberPortalList = () => {
       });
   }, [userInfo]);
 
-  const itemDetails = (_id) => {
-    navigate("/details/" + _id);
-    // console.log(_id);
+  const deleteGrabbedItem = async (id) => {
+    await axios.delete(`http://localhost:3001/grabbeditems/${id}`, id)
+      .then((res) => {
+        if (res.status === 200) {
+          alert("Grabbed Item successfully deleted");
+          axios.get("http://localhost:3001/grabbeditems/")
+          .then(({ data }) => {
+            // console.log(userInfo);
+            setGrabbedItems(data);
+          }); 
+         axios.put("http://localhost:3001/items/ungrab", {id});
+          navigate("/grabberportal");
+        } else Promise.reject();
+      })
+      .catch((err) => alert("Something went wrong"));
+  };
+
+  const deleteWishedItem = async (id,userInfo) => {
+    console.log("delete wish id " + id)
+    await axios.delete(`http://localhost:3001/wisheditems/${id}`, id)
+      .then((res) => {
+        if (res.status === 200) {
+          alert("Wishlist Item successfully deleted");
+          axios.get(`http://localhost:3001/wisheditems/${userInfo}`,userInfo)
+          .then(({ data }) => {
+            // console.log(userInfo);
+            setWishedItems(data);
+          });
+          navigate("/grabberportal");
+        } else Promise.reject();
+      })
+      .catch((err) => alert("Something went wrong"));
   };
 
   return (
@@ -88,6 +117,24 @@ const GrabberPortalList = () => {
             filterMethod: (filter, row) =>
               row[filter.id].startsWith(filter.value),
           },
+          {
+            Header: "Action",
+            filterable: false,
+            accessor: "grabbeditem_id",
+            Cell: (data) => (
+              <div>
+                <Button
+                  size="sm"
+                  onClick={() =>
+                    deleteGrabbedItem(data.row._original.grabbeditem_id)
+                  }
+                  variant="danger"
+                >
+                  Delete
+                </Button>
+              </div>
+            ),
+          },
         ]}
       />
       <h2>WishList</h2>
@@ -119,7 +166,9 @@ const GrabberPortalList = () => {
             accessor: "itemname",
             Cell: (data) => (
               <div>
-                <Button>Delete</Button>
+                <Button size="sm"
+                  onClick={() =>
+                    deleteWishedItem(data.row._original.wisheditem_id, userInfo) } variant="danger" >Delete</Button>
               </div>
             ),
           },

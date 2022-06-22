@@ -1,4 +1,8 @@
+.form-wrapper{
+	height: 80vh;
+	margin-bottom: 80vh;
 
+}
 
 .form-style-5{
 	max-width: 1000px;
@@ -16,11 +20,15 @@
 }
 .form-style-5 legend {
 	font-size: 1.4em;
-	margin-bottom: 10px;
+	/* margin-bottom: 10px; */
+	margin-bottom: 1px;
+
 }
 .form-style-5 label {
 	display: block;
-	margin-bottom: 8px;
+	/* margin-bottom: 8px; */
+	margin-bottom: 1px;
+
 }
 .form-style-5 input[type="text"],
 .form-style-5 input[type="date"],
@@ -48,7 +56,8 @@
 	color:#8a97a0;
 	-webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
 	box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
-	margin-bottom: 30px;
+	margin-bottom: 10px;
+
 }
 .form-style-5 input[type="text"]:focus,
 .form-style-5 input[type="date"]:focus,

@@ -59,8 +59,8 @@ const LoginForm = () => {
     }
 
     return (
-        <div class = 'section-container'>
-             {isLoggedIn ? (
+        <div className='section-container'>
+            {isLoggedIn ? (
                 <section>
                     <h1>Welcome Back!  {userInfo} </h1>
                     <p>

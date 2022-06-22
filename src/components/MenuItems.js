@@ -1,26 +1,26 @@
 export const MenuItems = [
   {
     _id: 1,
-    title: 'GetFood',
+    title: 'GrabFood',
     path: '/getfood',
     cName: 'dropdown-link'
   },
   {
     _id: 2,
+    title: 'Grab Histroy',
+    path: '/grabberportal',
+    cName: 'dropdown-link'
+  },
+  {
+    _id: 3,
     title: 'Meals for kids',
     path: '/kids',
     cName: 'dropdown-link'
   },
   {
-    _id: 3,
+    _id: 4,
     title: 'Nutrition Center',
     path: '/nutrition',
-    cName: 'dropdown-link'
-  },
-  {
-    _id: 4,
-    title: 'Development',
-    path: '/development',
     cName: 'dropdown-link'
   }
 ];

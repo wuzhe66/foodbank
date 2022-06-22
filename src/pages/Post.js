@@ -3,8 +3,12 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "./Post.css";
 import { ThemeContext } from "../context";
+import { UserInContext } from "../App";
+
 
 function Post() {
+  const [userInfo, setUserInfo] = useContext(UserInContext);
+
   const itemnameRef = useRef();
   const usernameRef = useRef();
   const expiredateRef = useRef();
@@ -25,7 +29,8 @@ function Post() {
       method: "POST",
       body: JSON.stringify({
         itemname: itemnameRef.current.value,
-        username: usernameRef.current.value,
+        // username: usernameRef.current.value,
+        username: userInfo,
         expiredate: expiredateRef.current.value,
         address: addressRef.current.value,
         description: descriptionRef.current.value,
@@ -42,10 +47,10 @@ function Post() {
   };
 
   return (
-    <div>
+    <div className="form-wrapper">
       <br />
       <br />
-      <div className="form-wrapper">
+      <div >
         <Form
           onSubmit={handleSubmit}
           className="form-style-5"
@@ -69,8 +74,9 @@ function Post() {
             <Form.Control
               id="username"
               type="text"
-              ref={usernameRef}
-              required
+              // ref={usernameRef}
+              // required
+              value={userInfo}
             />
           </Form.Group>
           <Form.Group className="col-sm-4">
