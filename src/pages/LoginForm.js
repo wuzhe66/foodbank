@@ -52,13 +52,9 @@ const LoginForm = () => {
                         response.data.success ? setUserInfo(user) : setUserInfo('Visiter');
 
                         setErrMsg(response.data.msg);
-                        // setSuccess(true);
                     }
                 );
-            // console.log(JSON.stringify(response.data));
-            // const accessToken = response.data.accessToken;
-            // const roles = response.data.roles;
-            // setIsLoggedIn({ user, pwd, roles, accessToken })
+
             setUser('');
             setPwd('')
         } catch (err) {
@@ -69,8 +65,8 @@ const LoginForm = () => {
     }
 
     return (
-        <>
-            {isLoggedIn ? (
+        <div class = 'section-container'>
+             {isLoggedIn ? (
                 <section>
                     <h1>Welcome Back!  {userInfo} </h1>
                     <p>
@@ -115,7 +111,7 @@ const LoginForm = () => {
                     </section>
                 )}
 
-        </>
+        </div>
 
 
 

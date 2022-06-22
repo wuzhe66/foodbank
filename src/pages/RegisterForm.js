@@ -116,7 +116,7 @@ const RegisterForm = () => {
 
 
   return (
-    <>
+    <div class = 'section-container'>
       {isLoggedIn ? (
         <section>
           <h1>Success! Nice to meet you {userInfo}</h1>
@@ -233,7 +233,7 @@ const RegisterForm = () => {
 
           </section>
         )}
-    </>
+    </div>
   )
 }
 
